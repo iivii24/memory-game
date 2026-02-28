@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: Arial, sans-serif;
+    background: #0f0a00;
+    color: #f0e6d0;
+    text-align: center;
+    padding: 2rem;
+}
+  
+h1 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #ffb347;
+}
+  
+#stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #c8a882;
+}
+  
+button {
+    padding: .6rem 1.5rem;
+    background: transparent;
+    border: 1px solid #ffb347;
+    color: #ffb347;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    transition: all .2s;
+}
+  
+button:hover {
+    background: #ffb347;
+    color: #0f0a00;
+}
+  
+/* ── Tablero ── */
+#tablero {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 1rem;
+    justify-content: center;
+}
+  
+/* ── Carta ── */
+.carta {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+  
+/* Efecto volteo */
+.carta.volteada {
+    transform: rotateY(180deg);
+}
+  
+.carta.encontrada {
+    transform: rotateY(180deg);
+}
+
+.carta.encontrada .cara-frente {
+    background: linear-gradient(135deg, #ff8c00, #ffb347);
+    border-color: transparent;
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.4);
+}
+  
+/* Caras de la carta */
+.cara-atras,
+.cara-frente {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    border-radius: 8px;
+    backface-visibility: hidden;
+}
+  
+.cara-atras {
+    background: #1a1000;
+    border: 1px solid #3d2800;
+}
+  
+.cara-frente {
+    background: #1f1200;
+    border: 1px solid #ffb347;
+    transform: rotateY(180deg);
+}
+  
+/* ── Modal victoria ── */
+#victoria {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 10, 0, 0.92);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    display: none;
+}
+  
+#victoria h2 {
+    font-size: 2.5rem;
+    color: #ffb347;
+}
+
+#victoria p {
+    color: #c8a882;
+}
