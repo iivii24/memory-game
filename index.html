@@ -9,6 +9,9 @@
   <body>
     <h1>Memory Game</h1>
 
+    <!-- Nivel actual -->
+    <div id="nivel-display">Nivel <span id="nivel-actual">1</span> / 5</div>
+
     <!-- Barra stats -->
     <div id="stats">
       <span>Movimientos: <span id="movimientos">0</span></span>
@@ -23,19 +26,19 @@
     <!-- Record -->
     <div id="record-display">Cargando récord...</div>
 
-    <!-- Modal de victoria -->
-    <div id="victoria" style="display: none">
-      <h2>¡Felicidades!</h2>
-      <p>
-        Has completado el juego en <span id="tiempo-victoria">0</span> segundos.
-      </p>
-      <p id="record-msg" style="display: none"></p>
-      <input
-        type="text"
-        id="input-nombre"
-        placeholder="Tu nombre..."
-        style="display: none"
-      />
+    <!-- Modal entre niveles -->
+    <div id="modal-nivel" style="display:none">
+      <h2>¡Nivel superado! 🎉</h2>
+      <p id="msg-nivel"></p>
+      <button id="btn-siguiente-nivel">Siguiente nivel →</button>
+    </div>
+
+    <!-- Modal victoria final -->
+    <div id="victoria" style="display:none">
+      <h2>¡Has completado todos los niveles! 🏆</h2>
+      <p>Tiempo total: <span id="tiempo-victoria">0</span>s</p>
+      <p id="record-msg" style="display:none"></p>
+      <input type="text" id="input-nombre" placeholder="Tu nombre..." style="display:none"/>
       <button id="btn-guardar">Guardar récord</button>
       <button id="reiniciar-victoria">Jugar de nuevo</button>
     </div>
